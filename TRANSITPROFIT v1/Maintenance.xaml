@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRANSITPROFIT_v1.Maintenance"
+             Title="Maintenance"
+             BackgroundColor="White"
+             Padding="15">
+             
+    <VerticalStackLayout Spacing="10">
+
+        <!-- Header Section -->
+        <Grid ColumnSpacing="10">
+            <Frame WidthRequest="100" HeightRequest="100" BackgroundColor="LightGray" CornerRadius="10">
+                <Label Text="IMAGE" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Frame>
+            <VerticalStackLayout>
+                <Label Text="UNIT:  E-JEEP 01" FontAttributes="Bold"/>
+                <Label Text="DRIVER NAME:" FontAttributes="Bold"/>
+                <Label Text="LAST CHECKUP:" FontAttributes="Bold"/>
+                <Label FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="STATUS: " />
+                            <Span Text="READY TO RUN" TextColor="Green" FontAttributes="Bold"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Maintenance Status -->
+        <Frame Padding="10" BackgroundColor="#F0F0F0" CornerRadius="10">
+            <Grid ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="MAINTENANCE ITEMS" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="GOOD ✅" FontAttributes="Bold" TextColor="Green" Grid.Row="0" Grid.Column="1"/>
+                <Label Text="REPAIR ❌" FontAttributes="Bold" TextColor="Red" Grid.Row="0" Grid.Column="2"/>
+
+                <!-- Items -->
+                <Grid Grid.Row="1" Grid.ColumnSpan="3">
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Engine Check" />
+                            <BoxView Color="Green" WidthRequest="20" HeightRequest="20"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Lights and Signals" />
+                            <BoxView Color="Red" WidthRequest="20" HeightRequest="20"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Tires" />
+                            <BoxView Color="Green" WidthRequest="20" HeightRequest="20"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Battery" />
+                            <BoxView Color="Green" WidthRequest="20" HeightRequest="20"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Grid>
+            </Grid>
+        </Frame>
+
+        <!-- Search and Filter -->
+        <Grid ColumnDefinitions="3*,1*,1*" Padding="10">
+            <Entry Grid.Column="0" Placeholder="SEARCH" BackgroundColor="White" HeightRequest="40"/>
+            <Label Grid.Column="1" Text="ALL" FontAttributes="Bold" TextDecorations="Underline"/>
+            <Label Grid.Column="2" Text="E-JEEP"/>
+            <Label Grid.Column="3" Text="EURO"/>
+        </Grid>
+
+        <!-- Table Header -->
+        <Frame Padding="5" BackgroundColor="#F8F8F8" CornerRadius="10">
+            <Grid ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="UNIT" FontAttributes="Bold" Grid.Column="0"/>
+                <Label Text="LAST CHECKUP" FontAttributes="Bold" Grid.Column="1"/>
+                <Label Text="DESCRIPTION" FontAttributes="Bold" Grid.Column="2"/>
+            </Grid>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
